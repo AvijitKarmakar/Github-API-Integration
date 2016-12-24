@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Github</string>
+    <string name="user">User</string>
+
+    <string name="user_transition">User Transition</string>
+    <string name="owner_img_transition">Owner Img Transition</string>
+    <string name="view_btn_transition">View Btn Transition</string>
+    <string name="github_user_name">Github User Name</string>
+    <string name="view">View</string>
+    <string name="username_empty_msg">Username must not be empty</string>
+    <string name="server_error_msg">Server Error</string>
+    <string name="internal_error_msg">Internal Error</string>
+    <string name="fetch_events_msg">Fetching events..</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="repo_name_txt">&lt;b&gt;Repo Name:&lt;/b&gt; %1$s</string>
+    <string name="event_type_txt">&lt;b&gt;Event Type:&lt;/b&gt; %1$s</string>
+    <string name="public_event_txt">&lt;b&gt;Public Event:&lt;/b&gt; %1$s</string>
+    <string name="repo_create_date_txt">&lt;b&gt;Creation Date:&lt;/b&gt; %1$s</string>
+    <string name="repo_update_date_txt">&lt;b&gt;Updation Date:&lt;/b&gt; %1$s</string>
+    <string name="fetch_repo_detail_msg">Fetching repo detail..</string>
+    <string name="owner">Owner</string>
+</resources>
