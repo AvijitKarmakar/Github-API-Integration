@@ -20,4 +20,5 @@
     <string name="repo_update_date_txt">&lt;b&gt;Updation Date:&lt;/b&gt; %1$s</string>
     <string name="fetch_repo_detail_msg">Fetching repo detail..</string>
     <string name="owner">Owner</string>
+    <string name="no_event_msg">No events found</string>
 </resources>

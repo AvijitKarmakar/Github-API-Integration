@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.text.Html;
+import android.text.TextUtils;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
@@ -36,21 +37,23 @@ public class EventsAdapter extends GenericBaseAdapter<Event, EventItemBinding> {
 
     @Override
     void setLayout(final EventItemBinding binding, final Event event) {
-        Glide.with(context)
-                .load(event.getOrg().getAvatar_url())
-                .asBitmap()
-                .centerCrop()
-                .into(new BitmapImageViewTarget(binding.avatarImgView) {
+        if (!TextUtils.isEmpty(event.getActor().getAvatar_url())) {
+            Glide.with(context)
+                    .load(event.getActor().getAvatar_url())
+                    .asBitmap()
+                    .centerCrop()
+                    .into(new BitmapImageViewTarget(binding.avatarImgView) {
 
-                    @Override
-                    protected void setResource(Bitmap resource) {
-                        orgImgStore.saveOrgImg(resource, event.getOrg().getLogin());
-                        RoundedBitmapDrawable circularBitmapDrawable =
-                                RoundedBitmapDrawableFactory.create(context.getResources(), resource);
-                        circularBitmapDrawable.setCircular(true);
-                        binding.avatarImgView.setImageDrawable(circularBitmapDrawable);
-                    }
-                });
+                        @Override
+                        protected void setResource(Bitmap resource) {
+                            orgImgStore.saveOrgImg(resource, event.getActor().getLogin());
+                            RoundedBitmapDrawable circularBitmapDrawable =
+                                    RoundedBitmapDrawableFactory.create(context.getResources(), resource);
+                            circularBitmapDrawable.setCircular(true);
+                            binding.avatarImgView.setImageDrawable(circularBitmapDrawable);
+                        }
+                    });
+        }
         binding.reponameTxt.setText(Html.fromHtml(String.format(context.getString(R.string.repo_name_txt),
                 TextHelper.splitOnSplash(event.getRepo().getName()))));
         binding.eventTypeTxt.setText(Html.fromHtml(String.format(context.getString(R.string.event_type_txt),

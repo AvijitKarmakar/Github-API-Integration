@@ -73,8 +73,11 @@ public class EventsActivity extends ToolbarActivity<EventsPresenter>
 
     @Override
     public void setFeedsAdapter(List<Event> events) {
-        EventsAdapter eventsAdapter = new EventsAdapter(this, events, R.layout.event_item);
-        binding.eventsListView.setAdapter(eventsAdapter);
+        if (events != null && events.size() > 0) {
+            EventsAdapter eventsAdapter = new EventsAdapter(this, events, R.layout.event_item);
+            binding.eventsListView.setAdapter(eventsAdapter);
+        }
+        binding.eventsListView.setEmptyView(binding.emptyView);
     }
 
     @Override

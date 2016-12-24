@@ -19,6 +19,7 @@ public class Event implements Serializable {
     private boolean isPublic;
     private String created_at;
     private Org org;
+    private Actor actor;
 
     public String getId() {
         return id;
@@ -42,6 +43,10 @@ public class Event implements Serializable {
 
     public Org getOrg() {
         return org;
+    }
+
+    public Actor getActor() {
+        return actor;
     }
 
 }

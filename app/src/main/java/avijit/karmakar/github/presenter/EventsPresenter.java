@@ -52,7 +52,7 @@ public class EventsPresenter extends PresenterStub {
                     public void onResponse(Call<RepoDetail> call, Response<RepoDetail> response) {
                         iEventsView.hideProgressDialog();
                         if (response.isSuccessful()) {
-                            iEventsView.goToRepoDetails(response.body(), event.getOrg().getAvatar_url());
+                            iEventsView.goToRepoDetails(response.body(), event.getActor().getAvatar_url());
                         } else {
                             iEventsView.showServerErrorMsg();
                         }
